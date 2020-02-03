@@ -4,9 +4,7 @@ import commonjs from 'rollup-plugin-commonjs';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 import serve from 'rollup-plugin-serve';
-import html from 'rollup-plugin-bundle-html';
 import postcss from 'rollup-plugin-postcss';
-import copy from 'rollup-plugin-copy';
 import typescript from 'rollup-plugin-typescript2';
 import typescriptCompiler from 'typescript';
 import sveltePreprocessor from 'svelte-preprocess';
@@ -19,7 +17,7 @@ export default {
     sourcemap: true,
     format: 'iife',
     name: 'blog',
-    file: 'dist/index.js'
+    file: 'public/build/index.js'
   },
   plugins: [
     svelte({
@@ -27,11 +25,6 @@ export default {
       extensions: ['.svelte'],
       preprocess: sveltePreprocessor(),
       emitCss: true
-    }),
-    html({
-      template: 'public/index.html',
-      dest: 'dist',
-      filename: 'index.html'
     }),
     postcss({
       extract: true,
@@ -54,22 +47,13 @@ export default {
       dedupe: importee => importee === 'svelte' || importee.startsWith('svelte/')
     }),
     commonjs({ include: 'node_modules/**' }),
-    copy({
-      targets: [
-        {
-          src: ['public/favicon.png'],
-          dest: 'dist'
-        }
-      ],
-      copyOnce: true
-    }),
 
     development && serve({
-      contentBase: './dist',
+      contentBase: './public',
       open: false
     }),
 
-    development && livereload({ watch: './dist' }),
+    development && livereload({ watch: './public' }),
 
     !development && terser({ sourcemap: true })
   ],

@@ -1,39 +1,37 @@
 {
-  "name": "svelte-blog",
-  "version": "1.0.0",
-  "main": "src/main.ts",
-  "scripts": {
-    "start": "sirv dist",
-    "dev": "rm -rf ./dist && rollup -c -w",
-    "build": "rm -rf ./dist && rollup -c"
-  },
-  "dependencies": {
-    "@types/graphql": "^14.5.0",
-    "apollo-boost": "^0.4.7",
-    "graphql": "^14.6.0",
-    "sirv-cli": "^0.4.4",
-    "svelte": "^3.17.2",
-    "svelte-apollo": "^0.3.0"
-  },
-  "devDependencies": {
-    "@types/rollup-plugin-commonjs": "^9.3.1",
-    "@types/rollup-plugin-node-resolve": "^4.1.0",
-    "@types/rollup-plugin-postcss": "^2.0.0",
-    "node-sass": "^4.13.1",
-    "rollup": "^1.29.1",
-    "rollup-plugin-bundle-html": "^0.2.2",
-    "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-copy": "^3.3.0",
-    "rollup-plugin-livereload": "^1.0.4",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-postcss": "^2.0.3",
-    "rollup-plugin-scss": "^2.1.0",
-    "rollup-plugin-serve": "^1.0.1",
-    "rollup-plugin-svelte": "^5.1.1",
-    "rollup-plugin-terser": "^5.2.0",
-    "rollup-plugin-typescript2": "^0.22.1",
-    "svelte-material-ui": "^1.0.0-beta.19",
-    "svelte-preprocess": "^3.3.0",
-    "typescript": "^3.7.5"
-  }
+    "name": "svelte-blog",
+    "version": "1.0.0",
+    "main": "src/main.ts",
+    "scripts": {
+        "start": "sirv dist",
+        "dev": "rollup -c -w",
+        "build": "rollup -c"
+    },
+    "dependencies": {
+        "@types/graphql": "^14.5.0",
+        "apollo-boost": "^0.4.7",
+        "graphql": "^14.6.0",
+        "sirv-cli": "^0.4.4",
+        "svelte": "^3.17.2",
+        "svelte-apollo": "^0.3.0"
+    },
+    "devDependencies": {
+        "@types/rollup-plugin-commonjs": "^9.3.1",
+        "@types/rollup-plugin-node-resolve": "^4.1.0",
+        "@types/rollup-plugin-postcss": "^2.0.0",
+        "node-sass": "^4.13.1",
+        "rollup": "^1.29.1",
+        "rollup-plugin-commonjs": "^10.1.0",
+        "rollup-plugin-livereload": "^1.0.4",
+        "rollup-plugin-node-resolve": "^5.2.0",
+        "rollup-plugin-postcss": "^2.0.3",
+        "rollup-plugin-scss": "^2.1.0",
+        "rollup-plugin-serve": "^1.0.1",
+        "rollup-plugin-svelte": "^5.1.1",
+        "rollup-plugin-terser": "^5.2.0",
+        "rollup-plugin-typescript2": "^0.22.1",
+        "svelte-material-ui": "^1.0.0-beta.19",
+        "svelte-preprocess": "^3.3.0",
+        "typescript": "^3.7.5"
+    }
 }
