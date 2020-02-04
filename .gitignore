@@ -5,6 +5,8 @@ node_modules
 # svelte
 .cache
 public/build
+.vscode
+
 
 # dotenv environment variables file
 .env
