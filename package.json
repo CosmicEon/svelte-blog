@@ -16,6 +16,10 @@
         "svelte-apollo": "^0.3.0"
     },
     "devDependencies": {
+        "@smui/button": "^1.0.0-beta.20",
+        "@smui/card": "^1.0.0-beta.20",
+        "@smui/paper": "^1.0.0-beta.20",
+        "@smui/textfield": "^1.0.0-beta.20",
         "@types/rollup-plugin-commonjs": "^9.3.1",
         "@types/rollup-plugin-node-resolve": "^4.1.0",
         "@types/rollup-plugin-postcss": "^2.0.0",
@@ -30,7 +34,6 @@
         "rollup-plugin-svelte": "^5.1.1",
         "rollup-plugin-terser": "^5.2.0",
         "rollup-plugin-typescript2": "^0.22.1",
-        "svelte-material-ui": "^1.0.0-beta.19",
         "svelte-preprocess": "^3.3.0",
         "typescript": "^3.7.5"
     }
