@@ -4,7 +4,7 @@
     import Button, { Label } from '@smui/button';
     import Paper, { Title, Content } from '@smui/paper';
     import Textfield from '@smui/textfield';
-    import { addPost, getAllPosts } from '../graphql/post';
+    import { addPost, getAllPosts } from '../graphql/posts';
     import * as types from '../types/types';
 
     let client;

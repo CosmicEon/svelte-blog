@@ -1,16 +1,11 @@
 <script lang="ts">
-    import { onMount } from 'svelte';
     import { getClient } from 'svelte-apollo';
     import Button, { Label } from '@smui/button';
     import Card, { Content, Actions } from '@smui/card';
-    import { deletePost, getAllPosts } from '../graphql/post';
+    import { deletePost, getAllPosts } from '../graphql/posts';
 
-    let client;
+    let client = getClient();
     let posts = getAllPosts();
-
-    onMount(() => {
-        client = getClient();
-    });
 
     const handleDeletePost = (e, post) => {
         e.preventDefault();
@@ -48,19 +43,23 @@
     {:then result}
         <h2 class="pl-5">Posts</h2>
         <div class="posts-all">
-            {#each result.data.posts as post, i}
-                <Card class="posts-card">
-                    <Content>
-                        <h3 class="g-header">{post.title}</h3>
-                        <p>{post.text}</p>
-                    </Content>
-                    <Actions>
-                        <Button on:click={e => handleDeletePost(e, post)}>
-                            <Label>Delete</Label>
-                        </Button>
-                    </Actions>
-                </Card>
-            {/each}
+            {#if result.data.posts.length > 0}
+                {#each result.data.posts as post, i}
+                    <Card class="posts-card">
+                        <Content>
+                            <h3 class="g-header">{post.title}</h3>
+                            <p>{post.text}</p>
+                        </Content>
+                        <Actions>
+                            <Button on:click={e => handleDeletePost(e, post)}>
+                                <Label>Delete</Label>
+                            </Button>
+                        </Actions>
+                    </Card>
+                {/each}
+            {:else}
+                <h3>No items</h3>
+            {/if}
         </div>
     {:catch e}
         {e}
